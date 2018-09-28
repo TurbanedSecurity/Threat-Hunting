@@ -11,7 +11,7 @@ Some common advanced threat backdoors include PlugX, 9002 RAT, Nettraveler, Deru
 If you come across names like these within your AV logs, it’s awesome.
 c)Identify any detections with the name ‘dropper’ in it-If a dropper has been detected,
 it’s possible there is still something lurking in the depths of the OS it was detected on.
-d)ome AV solutions also have the ability to create custom detections. McAfee’s AV has a section within their ePolicy Orchestrator to
+d)Some AV solutions also have the ability to create custom detections. McAfee’s AV has a section within their ePolicy Orchestrator to
 configure ‘Access Protection Policies’. So for example, if you want to log executions of binaries from a user’s APPDATA directory,
 you can create an alert with the following syntax “C:\Users\*\AppData\Local\Temp\*.exe”. Now any time a program launches from that directory, a log will be generated and sent to your console.
 
