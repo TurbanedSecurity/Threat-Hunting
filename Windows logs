@@ -1,0 +1,16 @@
+a)Creating alerts for event id 4648 and/or 552-A logon was attempted using explicit credentials.
+This is a useful event for tracking several different situations:
+->A user connects to a server or runs a program locally using alternate credentials.
+->Also generated when a process attempts to log on an account by explicitly specifying that account’s credentials. 
+->This most commonly occurs in batch-type configurations such as scheduled tasks, or when using the RUNAS command.
+https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventid=4648
+
+b)“User Added to Privileged Group” – Event ID 4728, 4732, 4756. Escalation of privileges will often occur once a foothold has been achieved within an environment. These logs may assist in the identification of such activity. It’s good to profile your IT admin’s legitimate activities as well since they’ll more often than not cause a bit of noise themselves.
+
+c)failed logon attempts.Looking for successive failed access attempts using multiple accounts could indicate a brute force. Focusing on one failed attempt per account may signify a threat actor trying to log in with passwords they’ve previously dumped from the environment in hopes that one may still work. Windows Event 4625, 529-539.
+
+d)Low Hanging Fruit:
+Log clearing – Windows Events 104 & 1102
+EMET crash logs – 1 & 2
+Application crashes and hangs – Windows Events 1000 & 1002
+Windows Defender errors – Windows Events 1005, 1006, 1008, 1010, 2001, 2003, 2004, 3002, 5008
