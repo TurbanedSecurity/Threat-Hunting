@@ -1,17 +1,23 @@
 1)->Hunting via antivirus
 Use your antivirus logs to threat hunt in your environment.
 Example scenarios-
-a)Signs of any password dumping programs executing within the environment. This would include pwdump, gsecdump, mimikatz, etc.
+a)Signs of any password dumping programs executing within the environment. This would include pwdump, gsecdump, mimikatz,fgdump,wce etc.
+This is because it is possible  your av was able to only produce an alert on one of the many used tools by hacker on that server.
 Research what your AV provider flags as a password dumping program and go searching! For example, one of McAfee’s password dumping
 detection tools is called HTool—GSECDump.countless times where an actor ran a password dumper, AV detected and removed it, and the
 attacker then successfully executed another dumper that wasn’t detected. So although they’ve achieved their initial objective, they’ve 
 left behind a clue of evidentiary value.
-b)Threat hunting APT'S -You’ll know the tools they most commonly use and the types of backdoors they may leverage.
+
+b)Check for known bad AV streetname-backdoor,shell,webshell,trojan on servers especially internet facing servers.
+c)Threat hunting APT'S -You’ll know the tools they most commonly use and the types of backdoors they may leverage.
 Some common advanced threat backdoors include PlugX, 9002 RAT, Nettraveler, Derusbi, Winnti, Pirpi, etc.
 If you come across names like these within your AV logs, it’s awesome.
-c)Identify any detections with the name ‘dropper’ in it-If a dropper has been detected,
+d)Identify any detections with the name ‘dropper’ in it-If a dropper has been detected,
 it’s possible there is still something lurking in the depths of the OS it was detected on.
-d)Some AV solutions also have the ability to create custom detections. McAfee’s AV has a section within their ePolicy Orchestrator to
+
+e)Some AV solutions also have the ability to create custom detections. McAfee’s AV has a section within their ePolicy Orchestrator to
 configure ‘Access Protection Policies’. So for example, if you want to log executions of binaries from a user’s APPDATA directory,
 you can create an alert with the following syntax “C:\Users\*\AppData\Local\Temp\*.exe”. Now any time a program launches from that directory, a log will be generated and sent to your console.
+
+
 
