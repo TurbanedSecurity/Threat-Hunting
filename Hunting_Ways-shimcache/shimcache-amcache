@@ -1,0 +1,23 @@
+shimcache-amcache threat hunting
+if an intrustion happedned yesterday or a month back then this is the best shot to find.
+github.com/mandiant/ShimCcheParser
+fireeye.com/blog/threat-research/2-015/06/caching_iut_the_val.html
+dl.mandiant.com/EE/library/whitepaper_shimcacheparser.pdf
+https://www.youtube.com/watch?v=YLgycMCPo4c
+shimcache is a book keeping data that windows automatically keep to support application  compatibility and is used by xp to 7 and server 2003-2008
+
+It would tell what ran on a system over an extended period of time.
+It would tell what dll's ,exe's were run.
+it provides last modified  time stamp and location from where the ex's were run.
+
+Amcache was a replacement of shimcache from windows 8 and server 2012
+It also provide sha-1 hashes.It contains more fields then shimcache that can be of value in threat hunting.
+https://github.com/williballenthin/python-registry/blob/master/samples/amcache.py
+Where to find-
+%WINDIR%\AppCompat\Programs\Amcache.hve
+amcache.hve is locked so either we can use inuse copy using above script.
+what to look for in shimcache/amcache sets?
+->Sequence of recon activities (net commands,pings) other recon cluster together.
+->Archievers being ran:RAR
+->exe's from abnormal locations
+->credential dumpers
