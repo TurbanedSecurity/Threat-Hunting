@@ -1,0 +1,18 @@
+It provides information on-
+when certain processes,dlls ,exe's ran .
+It is used for windows system performance enhancement
+
+https://www.youtube.com/watch?v=YLgycMCPo4c
+Not enabled by default on servers.
+128 files stored on xp and 7 .Later on increased to 1024.
+Lives in %SystemRoot%\Prefetch,
+it is in binary format so need a tool to parse.
+tool-you can use-Nirsoft's WinPrefetchView tools
+
+what to check-
+
+-> run counter field is less(ex-1,a cred dumper tool would only be run once or a malware that runs to start)
+->short file name(ex-1.exe,r.bat)
+->check for scan tools(nmap,zenmap) cred dumpers (mimikatz)
+->processes running out of unususal locations.(ex-recyclebin)
+->stack by various fields,commands in sequest can be a problem(ex-net1/net2,ping etc ran closely together)
